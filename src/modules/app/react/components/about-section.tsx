@@ -5,7 +5,7 @@ import AboutGrid from "@/modules/app/react/components/about-grid";
 export default function AboutSection() {
     return (
         <section className="px-8 md:px-16 py-16">
-            <div className="flex justify-between gap-20">
+            <div className="flex flex-col justify-between gap-20 lg:flex-row">
                 <div className="flex flex-col gap-16 w-full">
                     <AboutTitle />
                     <AboutText />
