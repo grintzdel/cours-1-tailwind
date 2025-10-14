@@ -1,7 +1,25 @@
+import ArrowSvgIcon from "@/ui/arrow";
+
 export default function Header() {
     return (
-        <header>
-            <h1>hello from header</h1>
+        <header className="py-4 px-8 md:py-8 md:px-16">
+            <div className="flex justify-between flex-col items-center md:flex-row md:gap-6">
+                <div>
+                    <h1 className="font-bold text-lg md:text-2xl">Oxaley</h1>
+                </div>
+                <div className="flex gap-20 flex-col items-center md:flex-row">
+                    <ul className="flex flex-row items-center whitespace-nowrap">
+                        <li>About Us,</li>
+                        <li>Services,</li>
+                        <li>Project,</li>
+                        <li>FAQ</li>
+                    </ul>
+                    <div className="flex flex-row gap-2 items-center">
+                        <a href="#" className="uppercase whitespace-nowrap">Contact Us</a>
+                        <ArrowSvgIcon className="rotate-180"/>
+                    </div>
+                </div>
+            </div>
         </header>
     )
 }
