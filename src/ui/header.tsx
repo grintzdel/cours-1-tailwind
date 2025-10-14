@@ -1,4 +1,4 @@
-import {ArrowSvgIcon} from "@/ui/arrow";
+import {Arrow} from "@/ui/arrow";
 import Link from "next/link";
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
                     </ul>
                     <div className="flex flex-row gap-2 items-center">
                         <Link href="#" className="uppercase whitespace-nowrap">Contact Us</Link>
-                        <ArrowSvgIcon className="rotate-180"/>
+                        <Arrow className="rotate-180"/>
                     </div>
                 </div>
             </div>

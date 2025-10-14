@@ -10,9 +10,9 @@ export default function HeroPortfolio() {
                 <p className="uppercase text-white">See our portfolio</p>
             </div>
             <MediaGallery>
-                <Media src="/media-1.jpg" alt="" width={200} height={100}/>
-                <Media src="/media-2.jpg" alt="" width={200} height={100}/>
-                <Media src="/media-3.jpg" alt="" width={200} height={100}/>
+                <Media src="/media-1.jpg" alt="" width={100} height={70}/>
+                <Media src="/media-2.jpg" alt="" width={100} height={70}/>
+                <Media src="/media-3.jpg" alt="" width={100} height={70}/>
             </MediaGallery>
             <Link href="#" className="uppercase flex gap-12 items-center">
                 Scroll Now

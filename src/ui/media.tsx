@@ -20,15 +20,17 @@ type MediaGalleryProps = {
 
 export const Media = ({src, alt, width, height}: MediaProps): JSX.Element => {
     return (
-        <Image className="rounded-md" src={src} alt={alt} width={width} height={height} />
+        <div className="rounded-md overflow-hidden flex-shrink-0" style={{width: `${width}px`, height: `${height}px`}}>
+            <Image className="w-full h-full object-cover" src={src} alt={alt} width={width} height={height} />
+        </div>
     )
 }
 
 export const MediaSkeleton = ({width, height}: MediaSkeletonProps): JSX.Element => {
     return (
         <div
-            className="rounded-md border-2 border-gray-300"
-            style={{width: `${width}px`, height: `${height}px`}}
+            className="rounded-md border-2 border-gray-300 flex-shrink-0"
+            style={{width: `${width}px`, height: `${height}px`, minHeight: `${height}px`}}
         />
     )
 }

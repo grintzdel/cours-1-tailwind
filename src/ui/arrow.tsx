@@ -8,7 +8,7 @@ type CircleArrowProps = {
     className?: React.ComponentProps<'div'>['className'];
 }
 
-export const ArrowSvgIcon = ({className}: ArrowSvgIconProps): JSX.Element => {
+export const Arrow = ({className}: ArrowSvgIconProps): JSX.Element => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor"
              className={`max-w-[20px] w-5 ${className || ''}`}>
