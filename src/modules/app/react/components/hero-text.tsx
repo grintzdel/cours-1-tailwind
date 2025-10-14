@@ -9,8 +9,8 @@ export default function HeroText() {
         <div className="flex justify-between">
             <div className="flex flex-col gap-8">
                 <TitlesList>
-                    <Title text="Crafting" />
-                    <Title text="narrative" />
+                    <Title text="Crafting" textColor="text-white" />
+                    <Title text="narrative" textColor="text-white" />
                     <Title text="through" textColor="text-[#86859b]" />
                     <Title text="design" textColor="text-[#86859b]" />
                 </TitlesList>

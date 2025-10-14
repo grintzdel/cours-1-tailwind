@@ -7,7 +7,7 @@ export default function AboutTitle() {
     return (
         <h2 className="text-4xl flex flex-col">
             <span className="flex items-center gap-2">
-                At oxaley <Divider color="bg-white" width="small" /> we believe
+                At oxaley <Divider width="small" /> we believe
             </span>
             <span>that design is not just</span>
             <span>about appearance but</span>

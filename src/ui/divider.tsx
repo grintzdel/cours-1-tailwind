@@ -6,7 +6,7 @@ type DividerProps = {
     width?: 'full' | 'regular' | 'small';
 }
 
-export const Divider = ({axis = 'horizontal', color = 'bg-white', width = 'regular'}: DividerProps): JSX.Element => {
+export const Divider = ({axis = 'horizontal', color = 'bg-black', width = 'regular'}: DividerProps): JSX.Element => {
     const isVertical = axis === 'vertical';
 
     const widthMap = {
