@@ -24,7 +24,7 @@ export default function AboutTitle() {
                 </AvatarsList>
             </span>
             <span className="flex items-center gap-2 text-[#848399]">
-                meaningful <Divider color="bg-gray-300" width="small" /> experiences
+                meaningful <Divider color="bg-gray-300" width="small" /> experiences.
             </span>
         </h2>
     )
