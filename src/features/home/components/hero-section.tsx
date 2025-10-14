@@ -3,9 +3,9 @@ import HeroPortfolioSection from "@/features/home/components/hero-portfolio-sect
 
 export default function HeroSection() {
     return (
-        <div className="flex flex-col">
+        <section className="flex flex-col">
             <HeroTextSection />
             <HeroPortfolioSection />
-        </div>
+        </section>
     )
 }
