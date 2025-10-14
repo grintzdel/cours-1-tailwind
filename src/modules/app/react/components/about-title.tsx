@@ -5,7 +5,7 @@ import {GiMoneyStack} from "react-icons/gi";
 
 export default function AboutTitle() {
     return (
-        <h2 className="text-4xl flex flex-col">
+        <h2 className="text-2xl flex flex-col lg:text-4xl">
             <span className="flex items-center gap-2">
                 At oxaley <Divider width="small" /> we believe
             </span>
