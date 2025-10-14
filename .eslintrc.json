@@ -1,0 +1,43 @@
+{
+    "extends": ["next/core-web-vitals", "prettier"],
+    "ignorePatterns": ["*.js", "node_modules/", "*.json", "*.md", "*.css"],
+    "globals": {
+    "React": true,
+        "JSX": true
+},
+    "env": {
+    "node": true
+},
+    "plugins": ["only-warn"],
+    "settings": {
+    "import/resolver": {
+        "typescript": {
+            "project": "./tsconfig.json"
+        }
+    }
+},
+    "overrides": [
+    {
+        "files": ["*.js?(x)", "*.ts?(x)"],
+        "rules": {
+            "unicorn/filename-case": [
+                "error",
+                {
+                    "case": "kebabCase",
+                    "ignore": ["^[A-Z][a-z]+\\.tsx?$"]
+                }
+            ],
+            "react/jsx-no-literals": "error",
+            "drizzle/enforce-delete-with-where": "error",
+            "drizzle/enforce-update-with-where": "error",
+            "no-unused-vars": [
+                "warn",
+                {
+                    "varsIgnorePattern": "^I[A-Z].*(Interface|Gateway)$"
+                }
+            ],
+            "@typescript-eslint/prefer-nullish-coalescing": "off"
+        }
+    }
+]
+}

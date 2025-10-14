@@ -1,27 +1,42 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "display": "Next.js",
   "compilerOptions": {
-    "target": "ES2017",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
     "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "incremental": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
     "plugins": [
       {
         "name": "next"
       }
     ],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "allowJs": true,
+    "jsx": "preserve",
+    "noEmit": true,
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "incremental": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "types": ["vitest"]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "./**/*.ts",
+    "./**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next-dev/types/**/*.ts",
+    "src/@types/*.d.ts",
+    "**/*.mts",
+    "**/*.test.ts",
+    "**/*.e2e.ts",
+  ],
+  "exclude": ["node_modules", "dist", "./out/**/*"]
 }
