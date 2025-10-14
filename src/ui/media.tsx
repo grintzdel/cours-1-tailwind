@@ -20,7 +20,7 @@ export const Media = ({src, alt, width, height}: MediaProps): JSX.Element => {
 
 export const MediaGallery = ({children}: MediaGalleryProps): JSX.Element => {
     return (
-        <div className="flex flex-wrap gap-4">
+        <div className="flex flex-col gap-4 lg:flex-row">
             {children}
         </div>
     )
