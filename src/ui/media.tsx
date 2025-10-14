@@ -4,8 +4,9 @@ import Image from "next/image";
 type MediaProps = {
     src: string;
     alt: string;
-    width: number;
-    height: number;
+    width: number | 'full';
+    height: number | 'full';
+    aspectRatio?: string;
 }
 
 type MediaSkeletonProps = {
@@ -18,10 +19,24 @@ type MediaGalleryProps = {
     flexDirection?: 'col' | 'row';
 }
 
-export const Media = ({src, alt, width, height}: MediaProps): JSX.Element => {
+export const Media = ({src, alt, width, height, aspectRatio = '16/9'}: MediaProps): JSX.Element => {
+    const widthStyle = width === 'full' ? '100%' : `${width}px`;
+    const heightStyle = height === 'full' ? '100%' : `${height}px`;
+    const useFill = width === 'full' || height === 'full';
+
+    const divStyle: React.CSSProperties = {
+        width: widthStyle,
+        height: heightStyle,
+        ...(useFill && width === 'full' && height === 'full' ? { aspectRatio } : {})
+    };
+
     return (
-        <div className="rounded-md overflow-hidden flex-shrink-0" style={{width: `${width}px`, height: `${height}px`}}>
-            <Image className="w-full h-full object-cover" src={src} alt={alt} width={width} height={height} />
+        <div className="rounded-md overflow-hidden flex-shrink-0 relative" style={divStyle}>
+            {useFill ? (
+                <Image className="object-cover" src={src} alt={alt} fill />
+            ) : (
+                <Image className="w-full h-full object-cover" src={src} alt={alt} width={width as number} height={height as number} />
+            )}
         </div>
     )
 }
