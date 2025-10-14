@@ -4,7 +4,7 @@ import {Title, TitlesList} from "@/ui/title";
 import {Avatar, AvatarsList} from "@/ui/avatar";
 
 
-export default function HeroTextSection() {
+export default function HeroText() {
     return (
         <div className="flex justify-between">
             <div className="flex flex-col gap-8">

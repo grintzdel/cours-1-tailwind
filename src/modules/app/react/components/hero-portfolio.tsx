@@ -2,7 +2,8 @@ import {Media, MediaGallery} from "@/ui/media";
 import Link from "next/link";
 import {CircleArrow} from "@/ui/arrow";
 
-export default function HeroPortfolioSection() {
+
+export default function HeroPortfolio() {
     return (
         <div className="flex flex-wrap justify-center content-center py-16 flex-col gap-9 lg:flex-row lg:justify-between lg:gap-0">
             <div className="flex items-center">
