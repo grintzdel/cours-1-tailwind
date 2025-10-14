@@ -4,8 +4,8 @@ import Image from "next/image";
 type MediaProps = {
     src: string;
     alt: string;
-    width: number | 'full';
-    height: number | 'full';
+    width?: string;
+    height?: string;
     aspectRatio?: string;
 }
 
@@ -19,24 +19,12 @@ type MediaGalleryProps = {
     flexDirection?: 'col' | 'row';
 }
 
-export const Media = ({src, alt, width, height, aspectRatio = '16/9'}: MediaProps): JSX.Element => {
-    const widthStyle = width === 'full' ? '100%' : `${width}px`;
-    const heightStyle = height === 'full' ? '100%' : `${height}px`;
-    const useFill = width === 'full' || height === 'full';
-
-    const divStyle: React.CSSProperties = {
-        width: widthStyle,
-        height: heightStyle,
-        ...(useFill && width === 'full' && height === 'full' ? { aspectRatio } : {})
-    };
+export const Media = ({src, alt, width = 'w-full', height = 'h-full', aspectRatio}: MediaProps): JSX.Element => {
+    const aspectRatioClass = aspectRatio ? `aspect-[${aspectRatio}]` : '';
 
     return (
-        <div className="rounded-md overflow-hidden flex-shrink-0 relative" style={divStyle}>
-            {useFill ? (
-                <Image className="object-cover" src={src} alt={alt} fill />
-            ) : (
-                <Image className="w-full h-full object-cover" src={src} alt={alt} width={width as number} height={height as number} />
-            )}
+        <div className={`rounded-md overflow-hidden relative ${width} ${height} ${aspectRatioClass}`}>
+            <Image className="object-cover" src={src} alt={alt} fill />
         </div>
     )
 }
@@ -51,7 +39,7 @@ export const MediaSkeleton = ({width, height}: MediaSkeletonProps): JSX.Element 
 }
 
 export const MediaGallery = ({children, flexDirection = 'row'}: MediaGalleryProps): JSX.Element => {
-    const mobileClass = flexDirection === 'row' ? 'flex-col' : 'flex-row';
+    const mobileClass = flexDirection === 'row' ? 'flex-col' : 'flex-col';
     const desktopClass = flexDirection === 'row' ? 'lg:flex-row' : 'lg:flex-col';
 
     return (
