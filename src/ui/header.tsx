@@ -2,7 +2,7 @@ import ArrowSvgIcon from "@/ui/arrow";
 
 export default function Header() {
     return (
-        <header className="py-4 px-8 md:py-8 md:px-16">
+        <header className="py-4 md:py-8">
             <div className="flex justify-between flex-col items-center md:flex-row md:gap-6">
                 <div>
                     <h1 className="font-bold text-lg md:text-2xl">Oxaley</h1>
