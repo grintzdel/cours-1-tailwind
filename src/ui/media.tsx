@@ -19,11 +19,22 @@ type MediaGalleryProps = {
     flexDirection?: 'col' | 'row';
 }
 
-export const Media = ({src, alt, width = 'w-full', height = 'h-full', aspectRatio}: MediaProps): JSX.Element => {
-    const aspectRatioClass = aspectRatio ? `aspect-[${aspectRatio}]` : '';
+type MediaBentoProps = {
+    children: React.ReactNode;
+}
+
+export const Media = ({src, alt, width = 'w-full', height, aspectRatio}: MediaProps): JSX.Element => {
+    const divStyle: React.CSSProperties = {};
+
+    if (aspectRatio && !height) {
+        divStyle.aspectRatio = aspectRatio;
+    }
+
+    const heightClass = height || '';
+    const classList = `rounded-md overflow-hidden relative ${width} ${heightClass}`.trim();
 
     return (
-        <div className={`rounded-md overflow-hidden relative ${width} ${height} ${aspectRatioClass}`}>
+        <div className={classList} style={divStyle}>
             <Image className="object-cover" src={src} alt={alt} fill />
         </div>
     )
@@ -44,6 +55,14 @@ export const MediaGallery = ({children, flexDirection = 'row'}: MediaGalleryProp
 
     return (
         <div className={`flex ${mobileClass} gap-2 ${desktopClass}`}>
+            {children}
+        </div>
+    )
+}
+
+export const MediaBento = ({children}: MediaBentoProps): JSX.Element => {
+    return (
+        <div className="flex flex-col gap-3 md:gap-5">
             {children}
         </div>
     )
