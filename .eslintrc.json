@@ -34,15 +34,6 @@
         "*.ts?(x)"
       ],
       "rules": {
-        "unicorn/filename-case": [
-          "error",
-          {
-            "case": "kebabCase",
-            "ignore": [
-              "^[A-Z][a-z]+\\.tsx?$"
-            ]
-          }
-        ],
         "react/jsx-no-literals": "error",
         "no-unused-vars": [
           "warn",
