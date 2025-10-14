@@ -21,12 +21,7 @@ export const Avatar = ({background = 'bg-white', media, borderColor = 'border-[#
 export const AvatarsList = ({children}: AvatarsListProps): JSX.Element => {
     return (
         <div className="flex flex-row -space-x-4">
-            {React.Children.map(children, (child) => {
-                if (React.isValidElement<AvatarProps>(child)) {
-                    return React.cloneElement(child);
-                }
-                return child;
-            })}
+            {children}
         </div>
     )
 }
