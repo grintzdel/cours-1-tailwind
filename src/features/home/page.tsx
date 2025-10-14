@@ -1,5 +1,5 @@
-import HeroSection from "@/features/home/components/hero-section";
-import AboutSection from "@/features/home/components/about-section";
+import HeroSection from "@/modules/app/react/components/hero-section";
+import AboutSection from "@/modules/app/react/components/about-section";
 
 export default function HomePage() {
     return (
