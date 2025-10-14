@@ -1,8 +1,9 @@
-import ArrowSvgIcon from "@/ui/arrow";
+import {ArrowSvgIcon} from "@/ui/arrow";
+import Link from "next/link";
 
 export default function Header() {
     return (
-        <header className="py-4 md:py-8">
+        <header className="py-8 md:py-16">
             <div className="flex justify-between flex-col items-center md:flex-row md:gap-6">
                 <div>
                     <h1 className="font-bold text-lg md:text-2xl">Oxaley</h1>
@@ -15,7 +16,7 @@ export default function Header() {
                         <li>FAQ</li>
                     </ul>
                     <div className="flex flex-row gap-2 items-center">
-                        <a href="#" className="uppercase whitespace-nowrap">Contact Us</a>
+                        <Link href="#" className="uppercase whitespace-nowrap">Contact Us</Link>
                         <ArrowSvgIcon className="rotate-180"/>
                     </div>
                 </div>
