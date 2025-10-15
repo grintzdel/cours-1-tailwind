@@ -62,7 +62,7 @@ export const MediaGallery = ({children, flexDirection = 'row'}: MediaGalleryProp
 
 export const MediaBento = ({children}: MediaBentoProps): JSX.Element => {
     return (
-        <div className="flex flex-col gap-3 md:gap-5">
+        <div className="flex flex-col gap-3">
             {children}
         </div>
     )
