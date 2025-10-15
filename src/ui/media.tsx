@@ -7,6 +7,7 @@ type MediaProps = {
     width?: string;
     height?: string;
     aspectRatio?: string;
+    axis?: 'horizontal' | 'vertical';
 }
 
 type MediaSkeletonProps = {
@@ -23,11 +24,13 @@ type MediaBentoProps = {
     children: React.ReactNode;
 }
 
-export const Media = ({src, alt, width = 'w-full', height, aspectRatio}: MediaProps): JSX.Element => {
+export const Media = ({src, alt, width = 'w-full', height, aspectRatio, axis = 'horizontal'}: MediaProps): JSX.Element => {
     const divStyle: React.CSSProperties = {};
 
     if (aspectRatio && !height) {
         divStyle.aspectRatio = aspectRatio;
+    } else if (!aspectRatio && !height) {
+        divStyle.aspectRatio = axis === 'horizontal' ? '16/9' : '9/16';
     }
 
     const heightClass = height || '';
